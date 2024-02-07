@@ -1,0 +1,15 @@
+spring:
+    sql:
+        init:
+            data-locations:
+                - classpath:colis.sql
+    config:
+        import:
+            - ./users.yml
+    liquibase:
+        change-log: classpath:/liquibase-changelog.xml
+    h2:
+        console:
+        enabled: true  
+    datasource:
+        url: 'jdbc:h2:mem:;IGNORECASE=TRUE;DATABASE_TO_UPPER=false'

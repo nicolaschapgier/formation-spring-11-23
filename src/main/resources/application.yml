@@ -1,0 +1,27 @@
+colibri:
+  users:
+    - id: 948c5c6b-cec0-4a56-a130-2448f88c5ca1
+      username: renaud
+      password: $2y$10$bxXm7vBxb.Nyjs8CXdFZb.HBqtOjmtaNmevFDvRv5XMxMGCDXUY8S
+      role: ADMIN
+    - id: 948c5c6b-cec0-4a56-a130-2448f88c5ca1
+      username: nicolas
+      password: $2y$10$bxXm7vBxb.Nyjs8CXdFZb.HBqtOjmtaNmevFDvRv5XMxMGCDXUY8S
+      role: ADMIN
+    - id: 3630925a-337f-408b-820c-8a51e6365bbf
+      username: marko
+      password: $2y$10$bxXm7vBxb.Nyjs8CXdFZb.HBqtOjmtaNmevFDvRv5XMxMGCDXUY8S
+      role: DELIVERY_PERSON
+    - id: 133fe0c4-c0e8-11ee-924e-00155d54d642
+      username: david
+      password: $2y$10$bxXm7vBxb.Nyjs8CXdFZb.HBqtOjmtaNmevFDvRv5XMxMGCDXUY8S
+      role: DELIVERY_PERSON
+spring:
+  liquibase:
+    change-log: classpath:/liquibase-changelog.xml
+  h2:
+    console:
+      enabled: true  
+  datasource:
+    url: jdbc:h2:file:/tmp/colibri.database
+  
