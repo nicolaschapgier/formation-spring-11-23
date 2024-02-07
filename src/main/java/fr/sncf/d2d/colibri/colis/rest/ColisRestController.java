@@ -56,7 +56,7 @@ public class ColisRestController {
 
     
     @PatchMapping("/{id}")
-    public Colis editColis(@Valid @RequestBody UpdateColisBody updateColisBody, @PathVariable UUID id) throws ColisNotFoundException {
+    public Colis editColis(@Valid @RequestBody UpdateColisBody updateColisBody, @PathVariable UUID id) throws ColisNotFoundException, UserNotFoundException {
         final var params = new UpdateColisParams();
         
         params.setId(id);
