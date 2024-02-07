@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import fr.sncf.d2d.colibri.colis.exceptions.ColisNotFoundException;
 import fr.sncf.d2d.colibri.colis.exceptions.DeliveryPersonNotFoundException;
+import fr.sncf.d2d.colibri.colis.exceptions.FieldNotFilledException;
 import fr.sncf.d2d.colibri.users.exceptions.UserNotFoundException;
 
 @RestControllerAdvice(assignableTypes = { ColisRestController.class })
@@ -26,4 +27,9 @@ public class ColisRestControllerAdvice {
     public ResponseEntity<String> handeDeliveryNotFound(DeliveryPersonNotFoundException exception){
         return ResponseEntity.status(HttpStatus.NOT_FOUND.value()).body(exception.getMessage());
     }
+    @ExceptionHandler(FieldNotFilledException.class)
+    public ResponseEntity<String> handeDeliveryNotFound(FieldNotFilledException exception){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND.value()).body(exception.getMessage());
+    }
+    
 }

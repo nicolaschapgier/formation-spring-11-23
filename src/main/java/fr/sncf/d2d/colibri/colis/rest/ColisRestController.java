@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.sncf.d2d.colibri.colis.exceptions.ColisNotFoundException;
+import fr.sncf.d2d.colibri.colis.exceptions.FieldNotFilledException;
 import fr.sncf.d2d.colibri.colis.models.Colis;
 import fr.sncf.d2d.colibri.colis.usecases.CreateColisParams;
 import fr.sncf.d2d.colibri.colis.usecases.CreateColisUseCase;
@@ -56,7 +57,7 @@ public class ColisRestController {
 
     
     @PatchMapping("/{id}")
-    public Colis editColis(@Valid @RequestBody UpdateColisBody updateColisBody, @PathVariable UUID id) throws ColisNotFoundException, UserNotFoundException {
+    public Colis editColis(@Valid @RequestBody UpdateColisBody updateColisBody, @PathVariable UUID id) throws ColisNotFoundException, UserNotFoundException, FieldNotFilledException {
         final var params = new UpdateColisParams();
         
         params.setId(id);
